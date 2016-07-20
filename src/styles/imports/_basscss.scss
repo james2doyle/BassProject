@@ -87,13 +87,13 @@
 
 @mixin spacing ($prefix, $style) {
   @each $key, $value in (0: 0, 1: 0.5rem, 2: 1rem, 3: 2rem, 4: 4rem) {
-    .#{$prefix}#{$key} { #{$style}:$value }
-    .#{$prefix}t#{$key} { #{$style}-top:$value }
-    .#{$prefix}r#{$key} { #{$style}-right:$value }
-    .#{$prefix}b#{$key} { #{$style}-bottom:$value }
-    .#{$prefix}l#{$key} { #{$style}-left:$value }
-    .#{$prefix}x#{$key} { #{$style}-left:$value; #{$style}-right:$value }
-    .#{$prefix}y#{$key} { #{$style}-top:$value; #{$style}-bottom:$value }
+    .#{$prefix}#{$key} { #{$style}:$value !important }
+    .#{$prefix}t#{$key} { #{$style}-top:$value !important }
+    .#{$prefix}r#{$key} { #{$style}-right:$value !important }
+    .#{$prefix}b#{$key} { #{$style}-bottom:$value !important }
+    .#{$prefix}l#{$key} { #{$style}-left:$value !important }
+    .#{$prefix}x#{$key} { #{$style}-left:$value !important; #{$style}-right:$value !important }
+    .#{$prefix}y#{$key} { #{$style}-top:$value !important; #{$style}-bottom:$value !important }
   }
 }
 
