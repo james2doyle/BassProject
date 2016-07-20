@@ -42,6 +42,10 @@ $darken-3: rgba(0, 0, 0, .25) !default;
     border-color: $darken-3;
     box-shadow: 0 0 0 3px $darken-3;
   }
+  &.bold{ font-weight: bold }
+  &.regular{ font-weight:normal }
+  &.italic{ font-style:italic }
+  &.uppercase{ text-transform:uppercase }
 }
 
 @mixin btn ($suffix, $color, $bgcolor) {

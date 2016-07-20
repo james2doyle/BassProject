@@ -42,7 +42,6 @@
   font-weight: 500; }
 
 .bold {
-  font-weight: bold;
   font-weight: bold; }
 
 .regular {
@@ -50,6 +49,9 @@
 
 .italic {
   font-style: italic; }
+
+.uppercase {
+  text-transform: uppercase; }
 
 .caps {
   text-transform: uppercase;
@@ -1450,6 +1452,14 @@
     outline: none;
     border-color: rgba(0, 0, 0, 0.25);
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25); }
+  .btn.bold {
+    font-weight: bold; }
+  .btn.regular {
+    font-weight: normal; }
+  .btn.italic {
+    font-style: italic; }
+  .btn.uppercase {
+    text-transform: uppercase; }
 
 .btn.btn-light {
   color: #333;
