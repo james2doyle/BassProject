@@ -4,6 +4,9 @@
   "description": "",
   "homepage": "",
   "repository": "bassproject",
+  "scripts": {
+    "server:dev": "browser-sync start --proxy \"BassProject.dev\" --files \"**/*.php, css/*.css, js/*.js\""
+  },
   "author": [
     {
       "name": "Randall Beatty",
