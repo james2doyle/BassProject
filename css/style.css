@@ -29,6 +29,27 @@
 .fs4 {
   font-size: 2rem; }
 
+.shadow1 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+.shadow2 {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
+
+.shadow3 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+
+.shadow4 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); }
+
+.shadow5 {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2); }
+
+.shadow6 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); }
+
+.shadow7 {
+  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2); }
+
 .font-family-inherit {
   font-family: inherit; }
 
@@ -1054,63 +1075,39 @@
   display: flex; }
 
 .flex-1 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
   flex: 1; }
 
 .flex-2 {
-  -webkit-flex: 2;
-  -ms-flex: 2;
   flex: 2; }
 
 .flex-3 {
-  -webkit-flex: 3;
-  -ms-flex: 3;
   flex: 3; }
 
 .flex-4 {
-  -webkit-flex: 4;
-  -ms-flex: 4;
   flex: 4; }
 
 .flex-5 {
-  -webkit-flex: 5;
-  -ms-flex: 5;
   flex: 5; }
 
 .flex-6 {
-  -webkit-flex: 6;
-  -ms-flex: 6;
   flex: 6; }
 
 .flex-7 {
-  -webkit-flex: 7;
-  -ms-flex: 7;
   flex: 7; }
 
 .flex-8 {
-  -webkit-flex: 8;
-  -ms-flex: 8;
   flex: 8; }
 
 .flex-9 {
-  -webkit-flex: 9;
-  -ms-flex: 9;
   flex: 9; }
 
 .flex-10 {
-  -webkit-flex: 10;
-  -ms-flex: 10;
   flex: 10; }
 
 .flex-11 {
-  -webkit-flex: 11;
-  -ms-flex: 11;
   flex: 11; }
 
 .flex-12 {
-  -webkit-flex: 12;
-  -ms-flex: 12;
   flex: 12; }
 
 @media (min-width: 37.5em) {
@@ -1494,10 +1491,6 @@
 :placeholder-shown {
   color: #777;
   color: rgba(0, 0, 0, 0.5); }
-
-::-moz-selection {
-  background-color: #6699CC;
-  background-color: rgba(102, 153, 204, 0.5); }
 
 ::selection {
   background-color: #6699CC;
