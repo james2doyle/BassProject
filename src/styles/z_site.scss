@@ -95,42 +95,54 @@ body {
   }
 }
 
-.color-primary { color: $primary }
+.color-primary {
+  color: $primary;
+}
 
 .bg-primary {
   color: white;
   background-color: $primary;
 }
 
-.color-light { color: $light }
+.color-light {
+  color: $light;
+}
 
 .bg-light {
   color: white;
   background-color: $light;
 }
 
-.color-mid { color: $mid }
+.color-mid {
+  color: $mid;
+}
 
 .bg-mid {
   color: white;
   background-color: $mid;
 }
 
-.color-dark { color: $dark }
+.color-dark {
+  color: $dark;
+}
 
 .bg-dark {
   color: white;
   background-color: $dark;
 }
 
-.color-danger { color: $danger }
+.color-danger {
+  color: $danger;
+}
 
 .bg-danger {
   color: white;
   background-color: $danger;
 }
 
-.color-success { color: $success }
+.color-success {
+  color: $success;
+}
 
 .bg-success {
   color: white;

@@ -1,40 +1,48 @@
-/* global require */
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var cssmin = require('gulp-cssmin');
-var uglify = require('gulp-uglify');
-var livereload = require('gulp-livereload');
-var autoprefixer = require('gulp-autoprefixer');
-var pkg = require('./package.json');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
+const browserify = require('gulp-browserify');
+const buble = require('gulp-buble');
+const cssmin = require('gulp-cssmin');
+const uglify = require('gulp-uglify');
+const livereload = require('gulp-livereload');
+const autoprefixer = require('gulp-autoprefixer');
+const header = require('gulp-header');
+const pkg = require('./package.json');
 
-var now = new Date();
+const now = new Date();
 // Create an array with the current month, day and time
-var date = [
-now.getMonth() + 1,
-now.getDate(),
-now.getFullYear()
-].join('/');
+const date = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
 
-var banner = ['/*!',
-' * <%= pkg.title || pkg.name %> - <%= pkg.description %>',
-' * @version v<%= pkg.version %>',
-' * @link <%= pkg.homepage %>',
-' * @license <%= pkg.license %>',
-' * @copyright (c) <%= date %> <%= pkg.author.name %> (<%= pkg.author.url %>)',
-' */',
-''].join('\n');
+const banner = `/*!
+ * <%= pkg.title || pkg.name %> - <%= pkg.description %>
+ * @version v<%= pkg.version %>
+ * @link <%= pkg.homepage %>
+ * @license <%= pkg.license.type %> (<%= pkg.license.url %>)
+ * @copyright (c) <%= date %> <%= pkg.author.name %> (<%= pkg.author.url %>)
+ */`;
 
-var data = {
-  pkg : pkg,
-  date: date
-};
-
-gulp.task('concat', function() {
-  gulp.src('src/scripts/*.js')
+gulp.task('js', function() {
+  gulp.src('src/scripts/index.js')
+  .pipe(sourcemaps.init())
+  .pipe(browserify({
+    insertGlobals : true
+  }))
+  .pipe(buble({
+    transforms: {
+      arrow: true,
+      modules: true,
+      classes: true,
+      letConst: true,
+      templateString: true,
+      dangerousForOf: true
+    }
+  }))
   .pipe(concat('script.js'))
-  .pipe(gulp.dest('js/'))
-  .pipe(livereload());
+  .pipe(sourcemaps.write())
+  .pipe(header(banner, { pkg : pkg, date: date } ))
+  .pipe(gulp.dest('js/'));
 });
 
 gulp.task('cssmin', function () {
@@ -48,8 +56,8 @@ gulp.task('sass', function () {
   gulp.src('src/styles/*.scss')
   .pipe(sass())
   .pipe(concat('style.css'))
-  .pipe(gulp.dest('css/'))
-  .pipe(livereload());
+  .pipe(header(banner, { pkg : pkg, date: date } ))
+  .pipe(gulp.dest('css/'));
 });
 
 gulp.task('autoprefixer', function () {
@@ -67,26 +75,20 @@ gulp.task('uglify', function() {
   gulp.src('js/script.js')
   .pipe(uglify())
   .pipe(concat('script.min.js'))
+  .pipe(header(banner, { pkg : pkg, date: date } ))
   .pipe(gulp.dest('js/'));
 });
 
-gulp.task('reload', function() {
-  gulp.src('views/{layouts,partials}/*.html')
-  .pipe(livereload());
-});
-
 gulp.task('watch', function() {
-  livereload.listen();
-  gulp.watch('views/{layouts,partials}/*.html', ['reload']);
   gulp.watch('src/styles/*.scss', ['sass']);
   gulp.watch('src/styles/imports/*.scss', ['sass']);
-  gulp.watch('src/scripts/*.js', ['concat']);
+  gulp.watch('src/scripts/**/*.js', ['js']);
 });
 
-gulp.task('default', ['sass', 'concat'], function() {
+gulp.task('default', ['sass', 'js'], function() {
   // fired before 'finished' event
 });
 
-gulp.task('build', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify'], function() {
+gulp.task('build', ['sass', 'autoprefixer', 'cssmin', 'js', 'uglify'], function() {
   // fired before 'finished' event
 });
