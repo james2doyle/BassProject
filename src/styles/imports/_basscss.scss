@@ -7,9 +7,9 @@
 .h5{ font-size: .875rem }
 .h6{ font-size: .75rem }
 
-@for $i from 1 through 4 {
-  .fs#{$i} {
-    font-size:  0rem + $i * 0.5;
+@each $key, $value in (1: 1rem, 2: 1.25rem, 3: 1.5rem, 4: 2rem) {
+  .fs#{$key} {
+    font-size: $value;
   }
 }
 
@@ -80,7 +80,7 @@
 .left{ float:left }
 .right{ float:right }
 
-.fit{ max-width:100% }
+.fit{ height: auto; max-width:100% }
 
 .max-width-1{ max-width: 24rem }
 .max-width-2{ max-width: 32rem }
@@ -198,6 +198,13 @@
 @for $i from 1 through 12 {
   .flex-#{$i} {
     flex: $i;
+  }
+}
+
+@for $i from 1 through 12 {
+  .flex-grow-#{$i} {
+    -webkit-flex-grow: $i;
+    flex-grow:         $i;
   }
 }
 
@@ -334,6 +341,7 @@
 }
 
 @media (max-width: #{$sm}){
+  .xs-center{ text-align:center !important }
   .xs-hide{ display:none !important }
   .xs-center { text-align: center }
 }
