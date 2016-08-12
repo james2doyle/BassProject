@@ -54,9 +54,11 @@ gulp.task('cssmin', function () {
 
 gulp.task('sass', function () {
   gulp.src('src/styles/*.scss')
+  .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(concat('style.css'))
   .pipe(header(banner, { pkg : pkg, date: date } ))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('css/'));
 });
 
