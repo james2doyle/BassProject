@@ -1,9 +1,5 @@
-<?php require_once('partials/Mobile_Detect.php');
-  $detect = new Mobile_Detect;
-  $device_type = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer'); ?>
-
 <!DOCTYPE html>
-<html class="<?php echo $device_type ?>" lang="en">
+<html lang="en">
 <head>
   <title>BassProject</title>
 
@@ -24,6 +20,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rem/1.3.4/js/rem.min.js"></script>
   <![endif]-->
+  <!-- dom4 polyfill for modern Element prototypes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom4/1.8.3/dom4.js"></script>
 </head>
 <body>
 <!--[if lt IE 8]>
