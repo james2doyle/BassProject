@@ -173,6 +173,42 @@ body {
   @include show-when-typekit-loaded();
 }
 
+label, input, select, textarea, button, button[type="button"], input[type="button"], input[type="reset"], input[type="submit"] {
+  // these font styles are not inherited from the body!!
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+form {
+  input, button, select, textarea {
+    // -webkit-appearance: none; // iOS reset
+    // border-radius: none; // iOS reset
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    margin-bottom: 1em;
+    padding: 1rem;
+    font-family: $body-font;
+  }
+  label {
+    font-family: $body-font;
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    margin-bottom: 0.5rem;
+  }
+  input[type="submit"], button, button[type="button"], input[type="button"], input[type="reset"], input[type="submit"] {
+    // button styles
+  }
+  textarea {
+    resize: none;
+    max-width: 100%; // no annoying >100% stretching
+  }
+}
+
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   // styles for retina screens
 }
