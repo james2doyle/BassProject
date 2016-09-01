@@ -184,7 +184,7 @@ label, input, select, textarea, button, button[type="button"], input[type="butto
 form {
   input, button, select, textarea {
     // -webkit-appearance: none; // iOS reset
-    // -webkit-border-radius: none; // iOS reset
+    // -webkit-border-radius: 0; // iOS reset
     display: inline-block;
     width: 100%;
     outline: none;
