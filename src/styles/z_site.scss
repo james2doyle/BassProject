@@ -187,6 +187,11 @@ body {
   // styles for iPhone 6
 }
 
+// iPhone 6 and 6+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) {
+  // styles for iPhone 6 and 6+
+}
+
 @media #{$breakpoint-sm} {
   // styles for $breakpoint-sm
 }
