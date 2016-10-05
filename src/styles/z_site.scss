@@ -16,9 +16,11 @@ $success: #ACC23A;
 $sm: 37.5em;
 $md: 48em;
 $lg: 64em;
+$xl: 110em;
 $breakpoint-sm: '(min-width: #{$sm})' !default;
 $breakpoint-md: '(min-width: #{$md})' !default;
 $breakpoint-lg: '(min-width: #{$lg})' !default;
+$breakpoint-xl: '(min-width: #{$xl})' !default;
 
 $golden-rule: 1.6180339887498948420;
 
@@ -238,6 +240,10 @@ form {
 
 @media #{$breakpoint-lg} {
   // styles for $breakpoint-lg
+}
+
+@media #{$breakpoint-xl} {
+  // styles for $breakpoint-xl
 }
 
 @media #{$breakpoint-md} and (orientation : portrait) {
