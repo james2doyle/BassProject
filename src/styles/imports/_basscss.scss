@@ -367,7 +367,7 @@
   clip:rect(1px, 1px, 1px, 1px);
 }
 
-@media (max-width: #{$sm}){
+@media #{$breakpoint-xs}{
   .xs-center{ text-align:center !important }
   .xs-hide{ display:none !important }
 }

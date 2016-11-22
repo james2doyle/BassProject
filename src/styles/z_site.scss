@@ -17,6 +17,7 @@ $sm: 37.5em;
 $md: 48em;
 $lg: 64em;
 $xl: 110em;
+$breakpoint-xs: '(max-width: #{$sm})' !default;
 $breakpoint-sm: '(min-width: #{$sm})' !default;
 $breakpoint-md: '(min-width: #{$md})' !default;
 $breakpoint-lg: '(min-width: #{$lg})' !default;
