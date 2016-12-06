@@ -6,7 +6,6 @@ const browserify = require('gulp-browserify');
 const buble = require('gulp-buble');
 const cssmin = require('gulp-cssmin');
 const uglify = require('gulp-uglify');
-const livereload = require('gulp-livereload');
 const autoprefixer = require('gulp-autoprefixer');
 const header = require('gulp-header');
 const pkg = require('./package.json');
@@ -25,60 +24,69 @@ const banner = `/*!
 
 gulp.task('js', function() {
   gulp.src('src/scripts/index.js')
-  .pipe(sourcemaps.init())
-  .pipe(browserify({
-    insertGlobals : true
-  }))
-  .pipe(buble({
-    transforms: {
-      arrow: true,
-      modules: true,
-      classes: true,
-      letConst: true,
-      templateString: true,
-      dangerousForOf: true
-    }
-  }))
-  .pipe(concat('script.js'))
-  .pipe(sourcemaps.write())
-  .pipe(header(banner, { pkg : pkg, date: date } ))
-  .pipe(gulp.dest('js/'));
+    .pipe(sourcemaps.init())
+    .pipe(browserify({
+      insertGlobals: true
+    }))
+    .pipe(buble({
+      transforms: {
+        arrow: true,
+        modules: true,
+        classes: true,
+        letConst: true,
+        templateString: true,
+        dangerousForOf: true
+      }
+    }))
+    .pipe(concat('script.js'))
+    .pipe(sourcemaps.write())
+    .pipe(header(banner, {
+      pkg: pkg,
+      date: date
+    }))
+    .pipe(gulp.dest('js/'));
 });
 
-gulp.task('cssmin', function () {
+gulp.task('cssmin', function() {
   gulp.src('css/style.css')
-  .pipe(cssmin())
-  .pipe(concat('style.min.css'))
-  .pipe(gulp.dest('css/'));
+    .pipe(cssmin())
+    .pipe(concat('style.min.css'))
+    .pipe(gulp.dest('css/'));
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
   gulp.src('src/styles/*.scss')
-  .pipe(sourcemaps.init())
-  .pipe(sass())
-  .pipe(concat('style.css'))
-  .pipe(header(banner, { pkg : pkg, date: date } ))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('css/'));
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(concat('style.css'))
+    .pipe(header(banner, {
+      pkg: pkg,
+      date: date
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('css/'));
 });
 
-gulp.task('autoprefixer', function () {
+gulp.task('autoprefixer', function() {
   gulp.src('css/style.css')
-  .pipe(autoprefixer({
-    browsers: ['last 4 versions', 'ie 8', 'ie 9'],
-    cascade: false,
-    remove: false // keep unneeded prefixes
-  }))
-  .pipe(concat('style.css'))
-  .pipe(gulp.dest('css/'));
+    .pipe(autoprefixer({
+      browsers: ['last 4 versions', 'ie 8', 'ie 9'],
+      cascade: false,
+      remove: false // keep unneeded prefixes
+    }))
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('css/'));
 });
 
 gulp.task('uglify', function() {
   gulp.src('js/script.js')
-  .pipe(uglify())
-  .pipe(concat('script.min.js'))
-  .pipe(header(banner, { pkg : pkg, date: date } ))
-  .pipe(gulp.dest('js/'));
+    .pipe(uglify())
+    .pipe(concat('script.min.js'))
+    .pipe(header(banner, {
+      pkg: pkg,
+      date: date
+    }))
+    .pipe(gulp.dest('js/'));
 });
 
 gulp.task('watch', function() {

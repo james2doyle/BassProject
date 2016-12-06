@@ -368,8 +368,8 @@
 }
 
 @media #{$breakpoint-xs}{
-  .xs-center{ text-align:center !important }
   .xs-hide, .sm-show, .md-show, .lg-show, .xl-show{ display:none !important }
+  .xs-center{ text-align:center !important }
 }
 
 @media #{$breakpoint-sm} and (max-width: #{$md}){
