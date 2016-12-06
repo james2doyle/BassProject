@@ -369,21 +369,21 @@
 
 @media #{$breakpoint-xs}{
   .xs-center{ text-align:center !important }
-  .xs-hide{ display:none !important }
+  .xs-hide, .sm-show, .md-show, .lg-show, .xl-show{ display:none !important }
 }
 
 @media #{$breakpoint-sm} and (max-width: #{$md}){
-  .sm-hide{ display:none !important }
+  .sm-hide, .md-show, .lg-show, .xl-show{ display:none !important }
   .sm-center { text-align: center }
 }
 
 @media #{$breakpoint-md} and (max-width: #{$lg}){
-  .md-hide{ display:none !important }
+  .md-hide, .lg-show, .xl-show{ display:none !important }
   .md-center { text-align: center }
 }
 
 @media #{$breakpoint-lg}{
-  .lg-hide{ display:none !important }
+  .lg-hide, .xl-show{ display:none !important }
   .lg-center { text-align: center }
 }
 
