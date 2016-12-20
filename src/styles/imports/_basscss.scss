@@ -1,5 +1,10 @@
 /*! Basscss 8.0.1 | http://basscss.com | MIT License */
 
+.max-width-1{ max-width: 24rem }
+.max-width-2{ max-width: 32rem }
+.max-width-3{ max-width: 48rem }
+.max-width-4{ max-width: 64rem }
+
 @each $key, $value in (1: 2rem, 2: 1.5rem, 3: 1.25rem, 4: 1rem, 5: .875rem, 6: .75rem) {
   .h#{$key} {
     font-size: $value;
@@ -86,11 +91,6 @@
 .right{ float:right }
 
 .fit{ height: auto; max-width:100% }
-
-.max-width-1{ max-width: 24rem }
-.max-width-2{ max-width: 32rem }
-.max-width-3{ max-width: 48rem }
-.max-width-4{ max-width: 64rem }
 
 .border-box{ box-sizing:border-box }
 
