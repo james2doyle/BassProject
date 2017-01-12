@@ -58,23 +58,17 @@ gulp.task('sass', function() {
   gulp.src('src/styles/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(concat('style.css'))
-    .pipe(header(banner, {
-      pkg: pkg,
-      date: date
-    }))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('css/'));
-});
-
-gulp.task('autoprefixer', function() {
-  gulp.src('css/style.css')
     .pipe(autoprefixer({
       browsers: ['last 4 versions', 'ie 8', 'ie 9'],
       cascade: false,
       remove: false // keep unneeded prefixes
     }))
     .pipe(concat('style.css'))
+    .pipe(header(banner, {
+      pkg: pkg,
+      date: date
+    }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('css/'));
 });
 
@@ -99,6 +93,6 @@ gulp.task('default', ['sass', 'js'], function() {
   // fired before 'finished' event
 });
 
-gulp.task('build', ['sass', 'autoprefixer', 'cssmin', 'js', 'uglify'], function() {
+gulp.task('build', ['sass', 'cssmin', 'js', 'uglify'], function() {
   // fired before 'finished' event
 });
