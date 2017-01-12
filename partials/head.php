@@ -20,6 +20,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rem/1.3.4/js/rem.min.js"></script>
   <![endif]-->
+
+  <!-- es5-shim https://github.com/es-shims/es5-shim#shims -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" type="text/javascript" charset="utf-8"></script>
+  <!-- es5-shim https://github.com/paulmillr/es6-shim#safe-shims -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.2/es6-shim.min.js" type="text/javascript" charset="utf-8"></script>
+
   <!-- Flexbox polyfill -->
   <!--[if IE]><script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/1.0.6/flexibility.js"></script><![endif]-->
   <!-- <script src="https://use.typekit.net/KIT_ID.js"></script> -->
