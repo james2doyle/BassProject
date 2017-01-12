@@ -23,7 +23,7 @@
 
   <!-- es5-shim https://github.com/es-shims/es5-shim#shims -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" type="text/javascript" charset="utf-8"></script>
-  <!-- es5-shim https://github.com/paulmillr/es6-shim#safe-shims -->
+  <!-- es6-shim https://github.com/paulmillr/es6-shim#safe-shims -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.2/es6-shim.min.js" type="text/javascript" charset="utf-8"></script>
 
   <!-- Flexbox polyfill -->
