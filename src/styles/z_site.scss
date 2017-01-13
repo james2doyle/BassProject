@@ -153,10 +153,8 @@ body {
 }
 
 @mixin retina {
-  @media (-webkit-min-device-pixel-ratio: 1.5),
-  (-o-min-device-pixel-ratio: 3/2),
-  (min--moz-device-pixel-ratio: 1.5),
-  (min-device-pixel-ratio: 1.5) {
+  // autoprefixer will polyfill this
+  @media (min-resolution: 2dppx) {
     @content;
   }
 }
