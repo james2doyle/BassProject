@@ -22,6 +22,7 @@ $breakpoint-sm: '(min-width: #{$sm})' !default;
 $breakpoint-md: '(min-width: #{$md})' !default;
 $breakpoint-lg: '(min-width: #{$lg})' !default;
 $breakpoint-xl: '(min-width: #{$xl})' !default;
+$breakpoint-ipad: 'only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)' !default;
 
 $golden-rule: 1.6180339887498948420;
 
@@ -254,7 +255,7 @@ form {
   // styles for $breakpoint-xl
 }
 
-@media #{$breakpoint-md} and (orientation : portrait) {
+@media #{$breakpoint-ipad} {
   // .xs-hide.sm-hide {
   //   display: block !important;
   // }
