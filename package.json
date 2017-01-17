@@ -19,10 +19,10 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18",
+    "bubleify": "^0.7.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-browserify": "^0.5.1",
-    "gulp-buble": "^0.8.0",
     "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-header": "^1.8.8",

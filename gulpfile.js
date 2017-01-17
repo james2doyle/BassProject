@@ -3,7 +3,6 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const browserify = require('gulp-browserify');
-const buble = require('gulp-buble');
 const cssmin = require('gulp-cssmin');
 const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
@@ -26,17 +25,8 @@ gulp.task('js', () => {
   gulp.src('src/scripts/index.js')
     .pipe(sourcemaps.init())
     .pipe(browserify({
-      insertGlobals: true
-    }))
-    .pipe(buble({
-      transforms: {
-        arrow: true,
-        modules: true,
-        classes: true,
-        letConst: true,
-        templateString: true,
-        dangerousForOf: true
-      }
+      insertGlobals: true,
+      transform: ['bubleify']
     }))
     .pipe(concat('script.js'))
     .pipe(sourcemaps.write())
