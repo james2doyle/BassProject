@@ -3,14 +3,12 @@
 <head>
   <title>BassProject</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-
   <!-- Add meta tags (https://github.com/WARPAINTMedia/meta-templates) -->
   <?php include 'partials/meta.php' ?>
 
   <!-- Generate favicons (http://realfavicongenerator.net) -->
   <?#php include 'partials/favicons.php' ?>
-  
+
   <!--[if IE 8]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.4.1/ie8.js"></script>
   <![endif]-->
@@ -30,6 +28,9 @@
   <!--[if IE]><script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/1.0.6/flexibility.js"></script><![endif]-->
   <!-- <script src="https://use.typekit.net/KIT_ID.js"></script> -->
   <!-- <script>function typekitLoaded() {document.body.className += ' typekit-loaded'};try{Typekit.load({ async: true, active: typekitLoaded });}catch(e){document.body.className += ' typekit-loaded typekit-error'};window.onload=typekitLoaded</script> -->
+  <!-- remove if using servicer-worker.js -->
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/modernizr.custom.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 <body>
 <!--[if lt IE 8]>

@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<script src="js/script.js"></script>
-
+<!-- remove if using servicer-worker.js -->
+<script src="js/script.js" type="text/javascript" charset="utf-8" defer></script>
 </body>
 </html>
