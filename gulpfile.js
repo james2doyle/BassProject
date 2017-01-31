@@ -73,13 +73,17 @@ gulp.task('uglify', () => {
     .pipe(gulp.dest('js/'));
 });
 
-gulp.task('generate-service-worker', (callback) => {
+gulp.task('generate-service-worker', ['build'], (callback) => {
   // this new script needs to be registered in a special way
   // https://github.com/GoogleChrome/sw-precache/blob/master/demo/app/js/service-worker-registration.js
   const swPrecache = require('sw-precache');
 
   swPrecache.write('service-worker.js', {
-    staticFileGlobs: ['js/script.js', 'css/style.css']
+    staticFileGlobs: [
+      'js/modernizr.custom.js',
+      'js/script.min.js',
+      'css/style.min.css'
+    ]
   }, callback);
 });
 

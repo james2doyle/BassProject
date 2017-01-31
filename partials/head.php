@@ -28,9 +28,10 @@
   <!--[if IE]><script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/1.0.6/flexibility.js"></script><![endif]-->
   <!-- <script src="https://use.typekit.net/KIT_ID.js"></script> -->
   <!-- <script>function typekitLoaded() {document.body.className += ' typekit-loaded'};try{Typekit.load({ async: true, active: typekitLoaded });}catch(e){document.body.className += ' typekit-loaded typekit-error'};window.onload=typekitLoaded</script> -->
+
   <!-- remove if using servicer-worker.js -->
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/modernizr.custom.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="js/modernizr.custom.js" type="text/javascript" charset="utf-8" async></script>
 </head>
 <body>
 <!--[if lt IE 8]>
