@@ -1,7 +1,7 @@
 class App {
   constructor(config = []) {
     document.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('loaded');
+      document.body.className += ' loaded';
     });
   }
 }
