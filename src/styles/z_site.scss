@@ -32,8 +32,11 @@ $golden-rule: 1.6180339887498948420;
 @import "imports/btn";
 
 :placeholder-shown {
-  color: $mid;
   color: rgba(black,.5);
+  // placeholder-shown is also the caret when typing
+  &:focus {
+    color: rgba(black,1);
+  }
 }
 
 ::selection {
