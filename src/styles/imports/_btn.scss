@@ -46,6 +46,10 @@ $darken-3: rgba(0, 0, 0, .25) !default;
   &.regular{ font-weight:normal }
   &.italic{ font-style:italic }
   &.uppercase{ text-transform:uppercase }
+  &.btn-small {
+    padding: 0.5rem 1.2rem;
+    font-size: $button-font-size - 0.2em;
+  }
 }
 
 @mixin btn ($suffix, $color, $bgcolor) {
@@ -66,4 +70,6 @@ $darken-3: rgba(0, 0, 0, .25) !default;
 
 @include btn('light', $dark, $light);
 @include btn('dark', white, $dark);
+@include btn('danger', white, $danger);
+@include btn('success', white, $success);
 @include btn('primary', white, $primary);
