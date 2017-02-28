@@ -27,7 +27,7 @@
   <!-- Flexbox polyfill -->
   <!--[if IE]><script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/1.0.6/flexibility.js"></script><![endif]-->
   <!-- <script src="https://use.typekit.net/KIT_ID.js"></script> -->
-  <!-- <script>function typekitLoaded() {document.body.className += ' typekit-loaded'};try{Typekit.load({ async: true, active: typekitLoaded });}catch(e){document.body.className += ' typekit-loaded typekit-error'};window.onload=typekitLoaded</script> -->
+  <!-- <script>function typekitLoaded() {document.documentElement.className += ' typekit-loaded'};try{Typekit.load({ async: true, active: typekitLoaded });}catch(e){document.documentElement.className += ' typekit-error'};window.onload=typekitLoaded</script> -->
 
   <!-- remove if using servicer-worker.js -->
   <link rel="stylesheet" href="css/style.css" />
