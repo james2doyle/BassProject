@@ -1,0 +1,35 @@
+label, input, select, textarea, button, button[type="button"], input[type="button"], input[type="reset"], input[type="submit"] {
+  // these font styles are not inherited from the body!!
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+form {
+  input, button, select, textarea {
+    // -webkit-appearance: none; // iOS reset
+    // -webkit-border-radius: 0; // iOS reset
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    margin-bottom: 1em;
+    padding: 1rem;
+    font-family: $body-font;
+  }
+  label {
+    font-family: $body-font;
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    margin-bottom: 0.5rem;
+  }
+  input[type="submit"], button, button[type="button"], input[type="button"], input[type="reset"], input[type="submit"] {
+    // button styles
+  }
+  textarea {
+    resize: none;
+    max-width: 100%; // no annoying >100% stretching
+  }
+}

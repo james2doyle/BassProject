@@ -1,0 +1,123 @@
+@import "imports/variables";
+@import "imports/mixins";
+
+:placeholder-shown {
+  color: rgba(black,.5);
+  // placeholder-shown is also the caret when typing
+  &:focus {
+    color: rgba(black,1);
+  }
+}
+
+::selection {
+  background-color: $primary;
+  background-color: rgba($primary, 0.5);
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+body {
+  font: normal normal normal 16px/#{$golden-rule} $body-font;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  margin: 0;
+}
+
+.browsehappy {
+  margin: 0;
+  padding: 1rem 0;
+  color: white;
+  text-align: center;
+  background-color: $primary;
+}
+
+#main:focus {
+  outline: none;
+}
+
+#skippy {
+  display: block;
+  padding: 1em 0;
+  color: $dark;
+  background-color: $primary;
+  outline: 0;
+  span {
+    padding: .5em;
+    outline: 1px dotted;
+  }
+}
+
+.color-primary {
+  color: $primary;
+}
+
+.bg-primary {
+  color: white;
+  background-color: $primary;
+}
+
+.color-light {
+  color: $light;
+}
+
+.bg-light {
+  color: white;
+  background-color: $light;
+}
+
+.color-mid {
+  color: $mid;
+}
+
+.bg-mid {
+  color: white;
+  background-color: $mid;
+}
+
+.color-dark {
+  color: $dark;
+}
+
+.bg-dark {
+  color: white;
+  background-color: $dark;
+}
+
+.color-danger {
+  color: $danger;
+}
+
+.bg-danger {
+  color: white;
+  background-color: $danger;
+}
+
+.color-success {
+  color: $success;
+}
+
+.bg-success {
+  color: white;
+  background-color: $success;
+}
+
+.show-on-load {
+  @include show-when-loaded();
+}
+
+.show-on-typekit {
+  @include show-when-typekit-loaded();
+}
+
+@import "imports/basscss";
+@import "imports/btn";
+@import "imports/forms";
+
+@import "imports/media-queries";
