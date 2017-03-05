@@ -42,7 +42,7 @@
   &::-webkit-input-placeholder { @content; }
 }
 
-@mixin spinner-overlay() {
+@mixin overlay($level: 0.1) {
   position: relative;
   &:before {
     content: '';
@@ -51,10 +51,17 @@
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0;
+    background-color: rgba(0, 0, 0, $level);
     user-select: none; // no selecting
     pointer-events: none; // click-through
     backface-visibility: hidden;
+  }
+}
+
+@mixin spinner-overlay() {
+  @include overlay();
+  &:before {
+    opacity: 0;
     background: url($spinner-img) no-repeat center rgba(black, 0.8); // link to image
     transition: all 0.2s ease;
   }
