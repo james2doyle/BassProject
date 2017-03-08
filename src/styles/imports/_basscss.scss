@@ -382,6 +382,29 @@
   clip: auto;
 }
 
+// handle broken images
+.handle-broken {
+  display: block;
+  height: auto;
+  line-height: 2;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  &:before {
+    content: "We're sorry, the image below failed to load.";
+    display: block;
+  }
+  &:after {
+    content: "(url: " attr(src) ")";
+    display: block;
+  }
+}
+
+// make a CSV from a list
+.csv > li:not(:last-child)::after {
+  content: ",";
+}
+
 @media #{$breakpoint-xs}{
   .xs-hide, .sm-show, .md-show, .lg-show, .xl-show{ display:none !important }
   .xs-center{ text-align:center !important }
