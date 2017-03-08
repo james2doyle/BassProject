@@ -30,6 +30,12 @@ body {
   margin: 0;
 }
 
+// default links without classes
+a[href]:not([class]) {
+  color: $primary;
+  text-decoration: underline;
+}
+
 .browsehappy {
   margin: 0;
   padding: 1rem 0;
