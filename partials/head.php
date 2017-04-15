@@ -9,7 +9,17 @@
   <!-- Generate favicons (http://realfavicongenerator.net) -->
   <?#php include 'partials/favicons.php' ?>
 
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <!-- minimizes latency as the DNS lookup has already taken place  -->
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <!-- <link rel="dns-prefetch" href="//fonts.googleapis.com"> -->
+  <!-- <link rel="dns-prefetch" href="//www.google-analytics.com"> -->
+
+  <!-- for modern browsers only -->
+  <!--
+  <link rel="preconnect" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="//www.google-analytics.com">
+   -->
 
   <!--[if IE 8]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.4.1/ie8.js"></script>
