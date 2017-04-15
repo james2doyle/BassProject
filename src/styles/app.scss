@@ -122,6 +122,14 @@ a[href]:not([class]) {
   @include show-when-typekit-loaded();
 }
 
+.overlay {
+  @include overlay(0.5);
+}
+
+.spinner-overlay {
+  @include spinner-overlay(0.5);
+}
+
 @import "imports/basscss";
 @import "imports/btn";
 @import "imports/forms";

@@ -58,8 +58,8 @@
   }
 }
 
-@mixin spinner-overlay() {
-  @include overlay();
+@mixin spinner-overlay($level: 0.5) {
+  @include overlay($level);
   &:before {
     opacity: 0;
     background: url($spinner-img) no-repeat center rgba(black, 0.8); // link to image

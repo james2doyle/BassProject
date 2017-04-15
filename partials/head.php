@@ -9,6 +9,8 @@
   <!-- Generate favicons (http://realfavicongenerator.net) -->
   <?#php include 'partials/favicons.php' ?>
 
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
   <!--[if IE 8]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.4.1/ie8.js"></script>
   <![endif]-->
