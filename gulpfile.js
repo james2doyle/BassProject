@@ -26,7 +26,7 @@ gulp.task('js', () => {
     .pipe(sourcemaps.init())
     .pipe(browserify({
       insertGlobals: true,
-      transform: ['bubleify']
+      transform: ['rollupify', 'bubleify']
     }))
     .pipe(concat('script.js'))
     .pipe(sourcemaps.write())
