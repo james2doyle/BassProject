@@ -42,7 +42,7 @@
   &::-webkit-input-placeholder { @content; }
 }
 
-@mixin overlay($level: 0.1) {
+@mixin overlay($level: 0.1, $gradient: 'false') {
   position: relative;
   &:before {
     content: '';
@@ -51,7 +51,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, $level);
+    @if $gradient == 'false' {
+      background-color: rgba(0, 0, 0, $level);
+    } @else {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, $level) 0%, rgba(0, 0, 0, 0) 100%);
+   }
     user-select: none; // no selecting
     pointer-events: none; // click-through
     backface-visibility: hidden;
