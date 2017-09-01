@@ -42,6 +42,9 @@ $darken-3: rgba(0, 0, 0, .25) !default;
     border-color: $darken-3;
     box-shadow: 0 0 0 3px $darken-3;
   }
+  &:active {
+    filter: brightness(1.1);
+  }
   &.bold{ font-weight: bold }
   &.regular{ font-weight:normal }
   &.italic{ font-style:italic }
@@ -67,6 +70,10 @@ $darken-3: rgba(0, 0, 0, .25) !default;
       }
       &:focus {
         border-color: lighten($bgcolor, 9%);
+      }
+      &:active {
+        border-color: lighten($bgcolor, 6%);
+        background-color: lighten($bgcolor, 5%);
       }
       &.btn-outline {
         color: $bgcolor;
