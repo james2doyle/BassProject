@@ -33,3 +33,69 @@ form {
     max-width: 100%; // no annoying >100% stretching
   }
 }
+
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-direction: row;
+}
+
+// all boxes and radios have these parent wrappers
+.custom-checkbox, .custom-radio {
+  position: relative;
+  display: flex;
+  margin-right: -1px;
+  input[type=checkbox],
+  input[type=radio], label {
+    // dont highlight text when double clicking
+    user-select: none;
+  }
+  input[type=checkbox], input[type=radio] {
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    // Better Font Rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:focus {
+      outline: none;
+    }
+  }
+  &:hover label {
+    color: darken($mid, 8%);
+    border: 1px solid darken($mid, 12%);
+  }
+  label {
+    font-family: $body-font;
+    display: block;
+    padding: $button-padding-y 0;
+    line-height: 1;
+    min-width: 100px;
+    text-align: center;
+    color: $mid;
+    border: 1px solid $mid;
+    transition: all 0.2s ease;
+  }
+  &.checked label,
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label {
+    color: white;
+    background: $primary;
+    border-color: $primary;
+  }
+  // an `inverted` class is there for making simple alternative styles
+  &.inverted {
+    input[type=checkbox], input[type=radio] {
+      // ...
+    }
+  }
+}
