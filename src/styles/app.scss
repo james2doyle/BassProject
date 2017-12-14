@@ -1,14 +1,6 @@
 @import "imports/variables";
 @import "imports/mixins";
 
-:placeholder-shown {
-  color: rgba(black,.5);
-  // placeholder-shown is also the caret when typing
-  &:focus {
-    color: rgba(black,1);
-  }
-}
-
 ::selection {
   background-color: $primary;
   background-color: rgba($primary, 0.5);
