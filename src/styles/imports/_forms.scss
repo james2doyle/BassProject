@@ -1,3 +1,11 @@
+:placeholder-shown {
+  color: rgba(black, .5);
+  // placeholder-shown is also the caret when typing
+  &:focus {
+    color: rgba(black, 1);
+  }
+}
+
 label, input, select, textarea, button, button[type="button"], input[type="button"], input[type="reset"], input[type="submit"] {
   // these font styles are not inherited from the body!!
   -webkit-font-smoothing: antialiased;
